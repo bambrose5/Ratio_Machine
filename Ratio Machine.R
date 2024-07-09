@@ -76,7 +76,7 @@ p_adj <- round(p.adjust(p_values, method = "BH"), 4)
 p_values <- round(p_values, 4)
 #Formats data and displays it
 data <- data.frame(Ratio = ratio_names, WT_ratio = round(mean_WT_ratios, 3), KO_ratio = round(mean_KO_ratios, 3), p = p_values, p.adj = p_adj)
-sig_data <- data[data$p.adj < 0.07, ]
+sig_data <- data[data$p.adj < 0.05, ]
 sig_data[order(sig_data$p.adj), ]
 
 #Part II: Plot significant ratios
